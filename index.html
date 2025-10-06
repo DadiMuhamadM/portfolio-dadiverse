@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Solutions - Portfolio Produk Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0F172A",
+              accent: "#3B82F6",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-primary text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <div class="text-2xl font-bold text-accent">DigitalSolutions</div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="#home"
+                class="hover:text-accent transition-colors duration-300"
+                >Beranda</a
+              >
+              <a
+                href="#products"
+                class="hover:text-accent transition-colors duration-300"
+                >Produk</a
+              >
+              <a
+                href="#about"
+                class="hover:text-accent transition-colors duration-300"
+                >Tentang</a
+              >
+              <a
+                href="#contact"
+                class="hover:text-accent transition-colors duration-300"
+                >Kontak</a
+              >
+            </div>
+          </div>
+          <button id="mobile-menu-btn" class="md:hidden">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary/90">
+          <a href="#home" class="block px-3 py-2 hover:text-accent">Beranda</a>
+          <a href="#products" class="block px-3 py-2 hover:text-accent"
+            >Produk</a
+          >
+          <a href="#about" class="block px-3 py-2 hover:text-accent">Tentang</a>
+          <a href="#contact" class="block px-3 py-2 hover:text-accent"
+            >Kontak</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center gradient-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Bangun Bisnis Lebih <span class="text-accent">Mudah</span> dengan
+              Solusi Digital dari Kami
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+              Semua aplikasi dibuat untuk mempermudah pekerjaan dan pengelolaan
+              bisnis Anda. Dari manajemen keuangan hingga sistem POS yang
+              canggih.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                onclick="scrollToSection('products')"
+                class="bg-accent hover:bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105"
+              >
+                Lihat Produk Kami
+              </button>
+              <button
+                onclick="scrollToSection('contact')"
+                class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300"
+              >
+                Hubungi Kami
+              </button>
+            </div>
+          </div>
+          <div class="animate-float">
+            <div class="relative">
+              <div class="glass-effect rounded-3xl p-8 transform rotate-3">
+                <svg class="w-full h-64" viewBox="0 0 400 300" fill="none">
+                  <!-- Phone mockup -->
+                  <rect
+                    x="50"
+                    y="20"
+                    width="120"
+                    height="200"
+                    rx="20"
+                    fill="#1E293B"
+                    stroke="#3B82F6"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="60"
+                    y="40"
+                    width="100"
+                    height="160"
+                    rx="10"
+                    fill="#0F172A"
+                  />
+                  <circle cx="110" cy="210" r="8" fill="#3B82F6" />
+
+                  <!-- Tablet mockup -->
+                  <rect
+                    x="200"
+                    y="40"
+                    width="160"
+                    height="120"
+                    rx="15"
+                    fill="#1E293B"
+                    stroke="#3B82F6"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="210"
+                    y="55"
+                    width="140"
+                    height="90"
+                    rx="8"
+                    fill="#0F172A"
+                  />
+
+                  <!-- Dashboard elements -->
+                  <rect
+                    x="220"
+                    y="70"
+                    width="40"
+                    height="6"
+                    rx="3"
+                    fill="#3B82F6"
+                  />
+                  <rect
+                    x="220"
+                    y="85"
+                    width="60"
+                    height="4"
+                    rx="2"
+                    fill="#64748B"
+                  />
+                  <rect
+                    x="220"
+                    y="95"
+                    width="50"
+                    height="4"
+                    rx="2"
+                    fill="#64748B"
+                  />
+                  <circle
+                    cx="320"
+                    cy="85"
+                    r="15"
+                    fill="#3B82F6"
+                    opacity="0.3"
+                  />
+                  <rect
+                    x="220"
+                    y="115"
+                    width="120"
+                    height="20"
+                    rx="10"
+                    fill="#3B82F6"
+                    opacity="0.2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Produk Digital Kami</h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Solusi lengkap untuk kebutuhan bisnis dan personal Anda
+          </p>
+        </div>
+
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          id="products-grid"
+        >
+          <!-- Products will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div
+      id="product-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      >
+        <div class="p-8">
+          <div class="flex justify-between items-start mb-6">
+            <h3 id="modal-title" class="text-3xl font-bold text-accent"></h3>
+            <button
+              onclick="closeModal()"
+              class="text-gray-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <div id="modal-content">
+            <!-- Content will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-bold mb-6">Tentang Kami</h2>
+            <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+              Kami adalah developer independen yang berfokus pada pembuatan
+              solusi digital sederhana namun powerful untuk membantu UMKM dan
+              pengguna individu.
+            </p>
+            <p class="text-lg text-gray-400 mb-8">
+              Misi kami adalah membuat teknologi yang mudah diakses dan
+              digunakan oleh semua kalangan, tanpa perlu keahlian teknis yang
+              rumit.
+            </p>
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-16 h-16 bg-accent rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg">Kualitas Terjamin</h4>
+                <p class="text-gray-400">Setiap produk melalui testing ketat</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="glass-effect rounded-3xl p-8">
+              <div class="text-center">
+                <div
+                  class="w-32 h-32 bg-gradient-to-br from-accent to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center"
+                >
+                  <svg
+                    class="w-16 h-16 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Tim Developer</h3>
+                <p class="text-gray-300">
+                  Berpengalaman dalam pengembangan aplikasi modern
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Apa Kata Pengguna</h2>
+          <p class="text-xl text-gray-300">
+            Testimoni dari pengguna yang telah merasakan manfaatnya
+          </p>
+        </div>
+
+        <!-- Desktop Grid -->
+        <div class="hidden lg:grid lg:grid-cols-3 gap-8">
+          <div class="glass-effect rounded-2xl p-6 card-hover">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-white font-bold">A</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Ahmad Rizki</h4>
+                <p class="text-gray-400 text-sm">Pemilik Toko</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "POS Elite sangat membantu mengelola toko saya. Interface yang
+              mudah dan laporan yang detail!"
+            </p>
+          </div>
+
+          <div class="glass-effect rounded-2xl p-6 card-hover">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-white font-bold">S</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Sari Dewi</h4>
+                <p class="text-gray-400 text-sm">Freelancer</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "Keuanganku membantu saya mengatur budget dengan lebih baik.
+              Sekarang pengeluaran lebih terkontrol."
+            </p>
+          </div>
+
+          <div class="glass-effect rounded-2xl p-6 card-hover">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-white font-bold">B</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Budi Santoso</h4>
+                <p class="text-gray-400 text-sm">Project Manager</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "PlanHub membuat tim saya lebih terorganisir. Tracking progress
+              jadi lebih mudah dan efisien."
+            </p>
+          </div>
+
+          <div class="glass-effect rounded-2xl p-6 card-hover">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-white font-bold">L</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Lisa Maharani</h4>
+                <p class="text-gray-400 text-sm">Cafe Owner</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "Sejak pakai POS Elite, omzet cafe saya naik 30%. Laporan
+              penjualannya sangat membantu analisis bisnis."
+            </p>
+          </div>
+
+          <div class="glass-effect rounded-2xl p-6 card-hover">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-white font-bold">R</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Rudi Hartono</h4>
+                <p class="text-gray-400 text-sm">Startup Founder</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "PlanHub jadi andalan tim untuk manage project. Fitur
+              kolaborasinya top banget!"
+            </p>
+          </div>
+
+          <div class="glass-effect rounded-2xl p-6 card-hover">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-white font-bold">M</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Maya Sari</h4>
+                <p class="text-gray-400 text-sm">Content Creator</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "Keuanganku bikin saya lebih disiplin nabung. Sekarang bisa
+              planning keuangan dengan baik."
+            </p>
+          </div>
+        </div>
+
+        <!-- Mobile/Tablet Carousel -->
+        <div class="lg:hidden relative">
+          <div
+            id="testimonials-carousel"
+            class="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide"
+            style="scroll-behavior: smooth"
+          >
+            <div class="flex-shrink-0 w-80 glass-effect rounded-2xl p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">A</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Ahmad Rizki</h4>
+                  <p class="text-gray-400 text-sm">Pemilik Toko</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "POS Elite sangat membantu mengelola toko saya. Interface yang
+                mudah dan laporan yang detail!"
+              </p>
+            </div>
+
+            <div class="flex-shrink-0 w-80 glass-effect rounded-2xl p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">S</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Sari Dewi</h4>
+                  <p class="text-gray-400 text-sm">Freelancer</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "Keuanganku membantu saya mengatur budget dengan lebih baik.
+                Sekarang pengeluaran lebih terkontrol."
+              </p>
+            </div>
+
+            <div class="flex-shrink-0 w-80 glass-effect rounded-2xl p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">B</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Budi Santoso</h4>
+                  <p class="text-gray-400 text-sm">Project Manager</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "PlanHub membuat tim saya lebih terorganisir. Tracking progress
+                jadi lebih mudah dan efisien."
+              </p>
+            </div>
+
+            <div class="flex-shrink-0 w-80 glass-effect rounded-2xl p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">L</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Lisa Maharani</h4>
+                  <p class="text-gray-400 text-sm">Cafe Owner</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "Sejak pakai POS Elite, omzet cafe saya naik 30%. Laporan
+                penjualannya sangat membantu analisis bisnis."
+              </p>
+            </div>
+
+            <div class="flex-shrink-0 w-80 glass-effect rounded-2xl p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">R</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Rudi Hartono</h4>
+                  <p class="text-gray-400 text-sm">Startup Founder</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "PlanHub jadi andalan tim untuk manage project. Fitur
+                kolaborasinya top banget!"
+              </p>
+            </div>
+
+            <div class="flex-shrink-0 w-80 glass-effect rounded-2xl p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">M</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Maya Sari</h4>
+                  <p class="text-gray-400 text-sm">Content Creator</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "Keuanganku bikin saya lebih disiplin nabung. Sekarang bisa
+                planning keuangan dengan baik."
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation Dots -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <button
+              onclick="scrollToTestimonial(0)"
+              class="w-3 h-3 rounded-full bg-accent transition-all duration-300"
+              id="testimonial-dot-0"
+            ></button>
+            <button
+              onclick="scrollToTestimonial(1)"
+              class="w-3 h-3 rounded-full bg-slate-600 hover:bg-accent transition-all duration-300"
+              id="testimonial-dot-1"
+            ></button>
+            <button
+              onclick="scrollToTestimonial(2)"
+              class="w-3 h-3 rounded-full bg-slate-600 hover:bg-accent transition-all duration-300"
+              id="testimonial-dot-2"
+            ></button>
+            <button
+              onclick="scrollToTestimonial(3)"
+              class="w-3 h-3 rounded-full bg-slate-600 hover:bg-accent transition-all duration-300"
+              id="testimonial-dot-3"
+            ></button>
+            <button
+              onclick="scrollToTestimonial(4)"
+              class="w-3 h-3 rounded-full bg-slate-600 hover:bg-accent transition-all duration-300"
+              id="testimonial-dot-4"
+            ></button>
+            <button
+              onclick="scrollToTestimonial(5)"
+              class="w-3 h-3 rounded-full bg-slate-600 hover:bg-accent transition-all duration-300"
+              id="testimonial-dot-5"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Hubungi Kami</h2>
+          <p class="text-xl text-gray-300">
+            Punya pertanyaan atau ingin demo produk? Kami siap membantu!
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div>
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >Nama Lengkap</label
+                >
+                <input
+                  type="text"
+                  required
+                  class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Email</label>
+                <input
+                  type="email"
+                  required
+                  class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Pesan</label>
+                <textarea
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-accent hover:bg-blue-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+              >
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+
+          <div class="space-y-8">
+            <div class="glass-effect rounded-2xl p-6">
+              <h3 class="text-xl font-semibold mb-4">Kontak Langsung</h3>
+              <div class="space-y-4">
+                <a
+                  href="https://wa.me/6281234567890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center space-x-3 text-gray-300 hover:text-accent transition-colors"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+                    />
+                  </svg>
+                  <span>WhatsApp: +62 812-3456-7890</span>
+                </a>
+                <div class="flex items-center space-x-3 text-gray-300">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                    />
+                  </svg>
+                  <span>Email: info@digitalsolutions.com</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-effect rounded-2xl p-6">
+              <h3 class="text-xl font-semibold mb-4">Jam Operasional</h3>
+              <div class="space-y-2 text-gray-300">
+                <p>Senin - Jumat: 09:00 - 18:00</p>
+                <p>Sabtu: 09:00 - 15:00</p>
+                <p>Minggu: Libur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="col-span-2">
+            <div class="text-2xl font-bold text-accent mb-4">
+              DigitalSolutions
+            </div>
+            <p class="text-gray-400 mb-6">
+              Solusi digital terpercaya untuk kemajuan bisnis Anda.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-accent transition-colors"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-accent transition-colors"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-accent transition-colors"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Produk</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-accent transition-colors"
+                  >Keuanganku</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-accent transition-colors"
+                  >PlanHub</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-accent transition-colors"
+                  >POS Elite</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Perusahaan</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#about" class="hover:text-accent transition-colors"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-accent transition-colors"
+                  >Kontak</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-accent transition-colors"
+                  >Karir</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-slate-700 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2024 DigitalSolutions. Semua hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Product data
+      const products = [
+        {
+          id: 1,
+          name: "Keuanganku",
+          description:
+            "Aplikasi manajemen keuangan pribadi yang membantu mencatat pengeluaran, membuat anggaran, dan menganalisis keuangan secara otomatis.",
+          specs: [
+            "Catat pengeluaran dan pemasukan",
+            "Atur budget bulanan per kategori",
+            "Lihat grafik dan laporan keuangan",
+            "Sinkronisasi cloud untuk backup data",
+          ],
+          price: "Gratis (fitur terbatas, versi premium akan datang)",
+          icon: "💰",
+          color: "from-green-500 to-emerald-600",
+          images: [
+            {
+              title: "Dashboard Utama",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#3B82F6" font-size="16" font-weight="bold">💰 Keuanganku Dashboard</text>
+                            <rect x="20" y="80" width="120" height="80" fill="#1E293B" rx="6"/>
+                            <text x="30" y="100" fill="#10B981" font-size="12">Saldo: Rp 2.500.000</text>
+                            <text x="30" y="120" fill="#EF4444" font-size="12">Pengeluaran: Rp 800.000</text>
+                            <text x="30" y="140" fill="#F59E0B" font-size="12">Budget: Rp 1.200.000</text>
+                            <rect x="160" y="80" width="120" height="80" fill="#1E293B" rx="6"/>
+                            <circle cx="220" cy="120" r="25" fill="none" stroke="#3B82F6" stroke-width="3"/>
+                            <path d="M 220 95 A 25 25 0 0 1 235 135" fill="none" stroke="#10B981" stroke-width="3"/>
+                        </svg>`,
+            },
+            {
+              title: "Grafik Pengeluaran",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#3B82F6" font-size="16" font-weight="bold">📊 Analisis Keuangan</text>
+                            <rect x="40" y="80" width="15" height="60" fill="#3B82F6"/>
+                            <rect x="70" y="100" width="15" height="40" fill="#10B981"/>
+                            <rect x="100" y="90" width="15" height="50" fill="#F59E0B"/>
+                            <rect x="130" y="110" width="15" height="30" fill="#EF4444"/>
+                            <rect x="160" y="85" width="15" height="55" fill="#8B5CF6"/>
+                            <text x="40" y="160" fill="#64748B" font-size="10">Jan</text>
+                            <text x="70" y="160" fill="#64748B" font-size="10">Feb</text>
+                            <text x="100" y="160" fill="#64748B" font-size="10">Mar</text>
+                            <text x="130" y="160" fill="#64748B" font-size="10">Apr</text>
+                            <text x="160" y="160" fill="#64748B" font-size="10">Mei</text>
+                        </svg>`,
+            },
+            {
+              title: "Kategori Budget",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#3B82F6" font-size="16" font-weight="bold">🎯 Budget Kategori</text>
+                            <rect x="30" y="80" width="240" height="25" fill="#1E293B" rx="4"/>
+                            <rect x="35" y="85" width="120" height="15" fill="#10B981" rx="2"/>
+                            <text x="30" y="75" fill="#E2E8F0" font-size="12">🍔 Makanan: 60%</text>
+                            <rect x="30" y="115" width="240" height="25" fill="#1E293B" rx="4"/>
+                            <rect x="35" y="120" width="80" height="15" fill="#F59E0B" rx="2"/>
+                            <text x="30" y="110" fill="#E2E8F0" font-size="12">🚗 Transport: 40%</text>
+                            <rect x="30" y="150" width="240" height="25" fill="#1E293B" rx="4"/>
+                            <rect x="35" y="155" width="200" height="15" fill="#EF4444" rx="2"/>
+                            <text x="30" y="145" fill="#E2E8F0" font-size="12">🎮 Hiburan: 95%</text>
+                        </svg>`,
+            },
+          ],
+        },
+        {
+          id: 2,
+          name: "PlanHub",
+          description:
+            "Aplikasi manajemen proyek dan kolaborasi tim dengan fitur to-do list, milestone, dan tracking progres yang mudah digunakan.",
+          specs: [
+            "Task management dan progress tracking",
+            "Timeline dan milestone project",
+            "Kolaborasi tim dan komentar langsung",
+            "Integrasi Google Calendar",
+          ],
+          price: "Gratis (fitur terbatas, versi premium segera hadir)",
+          icon: "📋",
+          color: "from-purple-500 to-indigo-600",
+          images: [
+            {
+              title: "Project Dashboard",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#8B5CF6" font-size="16" font-weight="bold">📋 PlanHub Dashboard</text>
+                            <rect x="20" y="80" width="80" height="100" fill="#1E293B" rx="6"/>
+                            <text x="25" y="95" fill="#E2E8F0" font-size="10" font-weight="bold">To Do</text>
+                            <rect x="25" y="100" width="70" height="15" fill="#374151" rx="3"/>
+                            <text x="30" y="110" fill="#D1D5DB" font-size="8">Design mockup</text>
+                            <rect x="25" y="120" width="70" height="15" fill="#374151" rx="3"/>
+                            <text x="30" y="130" fill="#D1D5DB" font-size="8">Code review</text>
+                            <rect x="110" y="80" width="80" height="100" fill="#1E293B" rx="6"/>
+                            <text x="115" y="95" fill="#E2E8F0" font-size="10" font-weight="bold">In Progress</text>
+                            <rect x="115" y="100" width="70" height="15" fill="#F59E0B" rx="3"/>
+                            <text x="120" y="110" fill="#1F2937" font-size="8">API Integration</text>
+                            <rect x="200" y="80" width="80" height="100" fill="#1E293B" rx="6"/>
+                            <text x="205" y="95" fill="#E2E8F0" font-size="10" font-weight="bold">Done</text>
+                            <rect x="205" y="100" width="70" height="15" fill="#10B981" rx="3"/>
+                            <text x="210" y="110" fill="#1F2937" font-size="8">Database setup</text>
+                        </svg>`,
+            },
+            {
+              title: "Timeline View",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#8B5CF6" font-size="16" font-weight="bold">📅 Project Timeline</text>
+                            <line x1="30" y1="80" x2="270" y2="80" stroke="#374151" stroke-width="2"/>
+                            <circle cx="60" cy="80" r="4" fill="#10B981"/>
+                            <text x="45" y="100" fill="#10B981" font-size="10">Start</text>
+                            <circle cx="120" cy="80" r="4" fill="#F59E0B"/>
+                            <text x="100" y="100" fill="#F59E0B" font-size="10">Milestone 1</text>
+                            <circle cx="180" cy="80" r="4" fill="#3B82F6"/>
+                            <text x="160" y="100" fill="#3B82F6" font-size="10">Milestone 2</text>
+                            <circle cx="240" cy="80" r="4" fill="#EF4444"/>
+                            <text x="225" y="100" fill="#EF4444" font-size="10">Deadline</text>
+                            <rect x="60" y="70" width="60" height="8" fill="#10B981" opacity="0.3"/>
+                            <rect x="120" y="70" width="60" height="8" fill="#F59E0B" opacity="0.3"/>
+                            <text x="30" y="130" fill="#E2E8F0" font-size="12">Progress: 65%</text>
+                            <rect x="30" y="140" width="200" height="10" fill="#374151" rx="5"/>
+                            <rect x="30" y="140" width="130" height="10" fill="#8B5CF6" rx="5"/>
+                        </svg>`,
+            },
+            {
+              title: "Team Collaboration",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#8B5CF6" font-size="16" font-weight="bold">👥 Team Chat</text>
+                            <rect x="30" y="80" width="240" height="20" fill="#374151" rx="10"/>
+                            <circle cx="45" cy="90" r="8" fill="#10B981"/>
+                            <text x="60" y="95" fill="#E2E8F0" font-size="10">Sarah: Task completed ✅</text>
+                            <rect x="30" y="110" width="240" height="20" fill="#1E293B" rx="10"/>
+                            <circle cx="45" cy="120" r="8" fill="#3B82F6"/>
+                            <text x="60" y="125" fill="#E2E8F0" font-size="10">John: Need review on design</text>
+                            <rect x="30" y="140" width="240" height="20" fill="#374151" rx="10"/>
+                            <circle cx="45" cy="150" r="8" fill="#F59E0B"/>
+                            <text x="60" y="155" fill="#E2E8F0" font-size="10">Mike: Updated timeline</text>
+                            <rect x="30" y="170" width="180" height="15" fill="#1E293B" rx="8"/>
+                            <text x="35" y="180" fill="#9CA3AF" font-size="9">Type a message...</text>
+                            <circle cx="260" cy="177" r="8" fill="#8B5CF6"/>
+                            <text x="255" y="182" fill="#FFF" font-size="10">→</text>
+                        </svg>`,
+            },
+          ],
+        },
+        {
+          id: 3,
+          name: "POS Elite",
+          description:
+            "Sistem Point of Sales untuk toko retail dan restoran, dengan transaksi cepat, laporan otomatis, dan manajemen stok.",
+          specs: [
+            "Transaksi cepat dan efisien",
+            "Laporan penjualan otomatis",
+            "Manajemen stok dan kasir",
+            "Support multi device",
+          ],
+          price: "Gratis (fitur terbatas untuk 1 kasir)",
+          icon: "🏪",
+          color: "from-blue-500 to-cyan-600",
+          images: [
+            {
+              title: "Kasir Interface",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#06B6D4" font-size="16" font-weight="bold">🏪 POS Elite Kasir</text>
+                            <rect x="20" y="80" width="120" height="100" fill="#1E293B" rx="6"/>
+                            <text x="25" y="95" fill="#E2E8F0" font-size="10" font-weight="bold">Keranjang</text>
+                            <rect x="25" y="100" width="110" height="15" fill="#374151" rx="3"/>
+                            <text x="30" y="110" fill="#D1D5DB" font-size="8">Nasi Goreng x2</text>
+                            <text x="100" y="110" fill="#10B981" font-size="8">40k</text>
+                            <rect x="25" y="120" width="110" height="15" fill="#374151" rx="3"/>
+                            <text x="30" y="130" fill="#D1D5DB" font-size="8">Es Teh x1</text>
+                            <text x="100" y="130" fill="#10B981" font-size="8">5k</text>
+                            <rect x="25" y="150" width="110" height="20" fill="#06B6D4" rx="4"/>
+                            <text x="65" y="163" fill="#FFF" font-size="10" font-weight="bold">Total: 45k</text>
+                            <rect x="160" y="80" width="120" height="100" fill="#1E293B" rx="6"/>
+                            <text x="165" y="95" fill="#E2E8F0" font-size="10" font-weight="bold">Menu</text>
+                            <rect x="165" y="100" width="50" height="35" fill="#10B981" rx="4"/>
+                            <text x="175" y="120" fill="#FFF" font-size="8">Nasi Goreng</text>
+                            <rect x="225" y="100" width="50" height="35" fill="#F59E0B" rx="4"/>
+                            <text x="240" y="120" fill="#FFF" font-size="8">Es Teh</text>
+                            <rect x="165" y="140" width="50" height="35" fill="#EF4444" rx="4"/>
+                            <text x="180" y="160" fill="#FFF" font-size="8">Ayam Bakar</text>
+                            <rect x="225" y="140" width="50" height="35" fill="#8B5CF6" rx="4"/>
+                            <text x="240" y="160" fill="#FFF" font-size="8">Jus Jeruk</text>
+                        </svg>`,
+            },
+            {
+              title: "Laporan Penjualan",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#06B6D4" font-size="16" font-weight="bold">📊 Laporan Harian</text>
+                            <rect x="30" y="80" width="80" height="50" fill="#1E293B" rx="6"/>
+                            <text x="35" y="95" fill="#10B981" font-size="10">Total Penjualan</text>
+                            <text x="35" y="110" fill="#10B981" font-size="16" font-weight="bold">Rp 2.5M</text>
+                            <text x="35" y="125" fill="#64748B" font-size="8">+15% dari kemarin</text>
+                            <rect x="120" y="80" width="80" height="50" fill="#1E293B" rx="6"/>
+                            <text x="125" y="95" fill="#3B82F6" font-size="10">Transaksi</text>
+                            <text x="125" y="110" fill="#3B82F6" font-size="16" font-weight="bold">156</text>
+                            <text x="125" y="125" fill="#64748B" font-size="8">+8% dari kemarin</text>
+                            <rect x="210" y="80" width="70" height="50" fill="#1E293B" rx="6"/>
+                            <text x="215" y="95" fill="#F59E0B" font-size="10">Avg/Transaksi</text>
+                            <text x="215" y="110" fill="#F59E0B" font-size="16" font-weight="bold">16k</text>
+                            <text x="215" y="125" fill="#64748B" font-size="8">+3% dari kemarin</text>
+                            <rect x="30" y="140" width="250" height="40" fill="#1E293B" rx="6"/>
+                            <text x="35" y="155" fill="#E2E8F0" font-size="10" font-weight="bold">Top Menu Hari Ini:</text>
+                            <text x="35" y="170" fill="#10B981" font-size="9">1. Nasi Goreng (45x) • 2. Es Teh (38x) • 3. Ayam Bakar (32x)</text>
+                        </svg>`,
+            },
+            {
+              title: "Manajemen Stok",
+              svg: `<svg viewBox="0 0 300 200" class="w-full h-full">
+                            <rect width="300" height="200" fill="#0F172A" rx="8"/>
+                            <rect x="20" y="20" width="260" height="40" fill="#1E293B" rx="6"/>
+                            <text x="30" y="45" fill="#06B6D4" font-size="16" font-weight="bold">📦 Manajemen Stok</text>
+                            <rect x="30" y="80" width="240" height="20" fill="#1E293B" rx="4"/>
+                            <text x="35" y="90" fill="#E2E8F0" font-size="9">Beras</text>
+                            <text x="100" y="90" fill="#10B981" font-size="9">50kg</text>
+                            <rect x="150" y="85" width="80" height="10" fill="#374151" rx="5"/>
+                            <rect x="150" y="85" width="60" height="10" fill="#10B981" rx="5"/>
+                            <text x="240" y="93" fill="#10B981" font-size="8">75%</text>
+                            <rect x="30" y="110" width="240" height="20" fill="#1E293B" rx="4"/>
+                            <text x="35" y="120" fill="#E2E8F0" font-size="9">Ayam</text>
+                            <text x="100" y="120" fill="#F59E0B" font-size="9">5kg</text>
+                            <rect x="150" y="115" width="80" height="10" fill="#374151" rx="5"/>
+                            <rect x="150" y="115" width="20" height="10" fill="#F59E0B" rx="5"/>
+                            <text x="240" y="123" fill="#F59E0B" font-size="8">25%</text>
+                            <rect x="30" y="140" width="240" height="20" fill="#1E293B" rx="4"/>
+                            <text x="35" y="150" fill="#E2E8F0" font-size="9">Minyak Goreng</text>
+                            <text x="100" y="150" fill="#EF4444" font-size="9">1L</text>
+                            <rect x="150" y="145" width="80" height="10" fill="#374151" rx="5"/>
+                            <rect x="150" y="145" width="8" height="10" fill="#EF4444" rx="5"/>
+                            <text x="240" y="153" fill="#EF4444" font-size="8">10%</text>
+                            <rect x="200" y="170" width="80" height="15" fill="#EF4444" rx="4"/>
+                            <text x="220" y="180" fill="#FFF" font-size="9">⚠️ Restock Alert</text>
+                        </svg>`,
+            },
+          ],
+        },
+      ];
+
+      // Load products
+      function loadProducts() {
+        const grid = document.getElementById("products-grid");
+        grid.innerHTML = products
+          .map(
+            (product) => `
+                <div class="glass-effect rounded-2xl p-6 card-hover cursor-pointer" onclick="openProductModal(${
+                  product.id
+                })">
+                    <div class="text-4xl mb-4">${product.icon}</div>
+                    <h3 class="text-2xl font-bold mb-3 text-accent">${
+                      product.name
+                    }</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">${
+                      product.description
+                    }</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-400">${
+                          product.price.split("(")[0]
+                        }</span>
+                        <button class="bg-accent hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      // Open product modal
+      function openProductModal(productId) {
+        const product = products.find((p) => p.id === productId);
+        if (!product) return;
+
+        document.getElementById("modal-title").textContent = product.name;
+        document.getElementById("modal-content").innerHTML = `
+                <div class="text-4xl mb-6">${product.icon}</div>
+                <p class="text-gray-300 mb-6 text-lg leading-relaxed">${
+                  product.description
+                }</p>
+                
+                <!-- Image Gallery -->
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold mb-4 text-accent">Preview Aplikasi:</h4>
+                    <div class="relative">
+                        <div id="image-gallery-${productId}" class="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide" style="scroll-behavior: smooth;">
+                            ${product.images
+                              .map(
+                                (image, index) => `
+                                <div class="flex-shrink-0 w-80 bg-slate-700 rounded-xl p-4">
+                                    <div class="h-48 mb-3 rounded-lg overflow-hidden bg-slate-800">
+                                        ${image.svg}
+                                    </div>
+                                    <h5 class="text-sm font-medium text-center text-gray-300">${image.title}</h5>
+                                </div>
+                            `
+                              )
+                              .join("")}
+                        </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <button onclick="scrollGallery('${productId}', 'left')" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-full shadow-lg transition-all duration-300 z-10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button onclick="scrollGallery('${productId}', 'right')" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-full shadow-lg transition-all duration-300 z-10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Dots Indicator -->
+                        <div class="flex justify-center mt-4 space-x-2">
+                            ${product.images
+                              .map(
+                                (_, index) => `
+                                <button onclick="scrollToImage('${productId}', ${index})" class="w-2 h-2 rounded-full bg-slate-600 hover:bg-accent transition-colors duration-300" id="dot-${productId}-${index}"></button>
+                            `
+                              )
+                              .join("")}
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="text-xl font-semibold mb-4 text-accent">Fitur Utama:</h4>
+                <ul class="space-y-3 mb-6">
+                    ${product.specs
+                      .map(
+                        (spec) => `
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">${spec}</span>
+                        </li>
+                    `
+                      )
+                      .join("")}
+                </ul>
+                
+                <div class="bg-slate-700 rounded-xl p-4 mb-6">
+                    <h4 class="font-semibold mb-2 text-accent">Harga:</h4>
+                    <p class="text-gray-300">${product.price}</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="alert('Fitur demo akan segera tersedia!')" class="bg-accent hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex-1">
+                        Coba Sekarang
+                    </button>
+                    <button onclick="scrollToSection('contact'); closeModal();" class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex-1">
+                        Hubungi untuk Demo
+                    </button>
+                </div>
+            `;
+
+        document.getElementById("product-modal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+
+        // Initialize gallery
+        setTimeout(() => {
+          updateGalleryIndicators(productId, 0);
+        }, 100);
+      }
+
+      // Close modal
+      function closeModal() {
+        document.getElementById("product-modal").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Smooth scroll to section
+      function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-btn")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Contact form submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda."
+          );
+          this.reset();
+        });
+
+      // Close modal when clicking outside
+      document
+        .getElementById("product-modal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+
+      // Gallery navigation functions
+      function scrollGallery(productId, direction) {
+        const gallery = document.getElementById(`image-gallery-${productId}`);
+        const scrollAmount = 320; // Width of one image card + gap
+
+        if (direction === "left") {
+          gallery.scrollLeft -= scrollAmount;
+        } else {
+          gallery.scrollLeft += scrollAmount;
+        }
+
+        // Update indicators after scroll
+        setTimeout(() => {
+          const currentIndex = Math.round(gallery.scrollLeft / scrollAmount);
+          updateGalleryIndicators(productId, currentIndex);
+        }, 300);
+      }
+
+      function scrollToImage(productId, index) {
+        const gallery = document.getElementById(`image-gallery-${productId}`);
+        const scrollAmount = 320; // Width of one image card + gap
+
+        gallery.scrollLeft = index * scrollAmount;
+        updateGalleryIndicators(productId, index);
+      }
+
+      function updateGalleryIndicators(productId, activeIndex) {
+        const product = products.find((p) => p.id === productId);
+        if (!product) return;
+
+        product.images.forEach((_, index) => {
+          const dot = document.getElementById(`dot-${productId}-${index}`);
+          if (dot) {
+            if (index === activeIndex) {
+              dot.classList.remove("bg-slate-600");
+              dot.classList.add("bg-accent");
+            } else {
+              dot.classList.remove("bg-accent");
+              dot.classList.add("bg-slate-600");
+            }
+          }
+        });
+      }
+
+      // Testimonial carousel functions
+      let currentTestimonialIndex = 0;
+      let testimonialAutoScroll;
+
+      function scrollToTestimonial(index) {
+        const carousel = document.getElementById("testimonials-carousel");
+        if (!carousel) return;
+
+        const cardWidth = 320; // 320px (w-80) + gap
+        carousel.scrollLeft = index * cardWidth;
+        currentTestimonialIndex = index;
+        updateTestimonialDots(index);
+      }
+
+      function updateTestimonialDots(activeIndex) {
+        for (let i = 0; i < 6; i++) {
+          const dot = document.getElementById(`testimonial-dot-${i}`);
+          if (dot) {
+            if (i === activeIndex) {
+              dot.classList.remove("bg-slate-600");
+              dot.classList.add("bg-accent");
+            } else {
+              dot.classList.remove("bg-accent");
+              dot.classList.add("bg-slate-600");
+            }
+          }
+        }
+      }
+
+      function startTestimonialAutoScroll() {
+        testimonialAutoScroll = setInterval(() => {
+          currentTestimonialIndex = (currentTestimonialIndex + 1) % 6;
+          scrollToTestimonial(currentTestimonialIndex);
+        }, 4000); // Auto scroll every 4 seconds
+      }
+
+      function stopTestimonialAutoScroll() {
+        if (testimonialAutoScroll) {
+          clearInterval(testimonialAutoScroll);
+        }
+      }
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        loadProducts();
+
+        // Start testimonial auto scroll for mobile
+        if (window.innerWidth < 1024) {
+          startTestimonialAutoScroll();
+
+          // Pause auto scroll when user interacts
+          const carousel = document.getElementById("testimonials-carousel");
+          if (carousel) {
+            carousel.addEventListener("touchstart", stopTestimonialAutoScroll);
+            carousel.addEventListener("scroll", stopTestimonialAutoScroll);
+
+            // Resume auto scroll after 10 seconds of no interaction
+            let resumeTimeout;
+            carousel.addEventListener("touchend", () => {
+              clearTimeout(resumeTimeout);
+              resumeTimeout = setTimeout(startTestimonialAutoScroll, 10000);
+            });
+          }
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in");
+            }
+          });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll("section").forEach((section) => {
+          observer.observe(section);
+        });
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+
+          // Close mobile menu if open
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'98a2664cd4660fad',t:'MTc1OTcyNDc3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
